@@ -208,7 +208,7 @@ g.part2 = function(datadir = c(), metadatadir = c(), f0 = c(), f1 = c(),
   
   #--------------------------------------------------------------------------------
   # Run the code either parallel or in serial (file index starting with f0 and ending with f1)
-  cores = parallel::detectCores()
+  cores = parallelly::availableCores()
   Ncores = cores[1]
   if (params_general[["do.parallel"]] == TRUE) {
     if (Ncores > 3) {

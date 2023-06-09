@@ -124,7 +124,7 @@ g.part3 = function(metadatadir = c(), f0, f1, myfun = c(),
   }
 
   if (params_general[["do.parallel"]] == TRUE) {
-    cores = parallel::detectCores()
+    cores = parallelly::availableCores()
     Ncores = cores[1]
     if (Ncores > 3) {
       if (length(params_general[["maxNcores"]]) == 0) params_general[["maxNcores"]] = Ncores

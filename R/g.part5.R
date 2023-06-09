@@ -1009,7 +1009,7 @@ g.part5 = function(datadir = c(), metadatadir = c(), f0=c(), f1=c(),
   # loop through milestone data-files or filenames stored in output of g.part2 and g.part4
   # setup parallel backend to use many processors
   if (params_general[["do.parallel"]] == TRUE) {
-    cores = parallel::detectCores()
+    cores = parallelly::availableCores()
     Ncores = cores[1]
     if (Ncores > 3) {
       if (length(params_general[["maxNcores"]]) == 0) params_general[["maxNcores"]] = Ncores

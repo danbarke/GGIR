@@ -437,7 +437,7 @@ g.part1 = function(datadir = c(), outputdir = c(), f0 = 1, f1 = c(),
   #--------------------------------------------------------------------------------
   # Run the code either parallel or in serial (file index starting with f0 and ending with f1)
   if (params_general[["do.parallel"]] == TRUE) {
-    cores = parallel::detectCores()
+    cores = parallelly::availableCores()
     Ncores = cores[1]
     if (Ncores > 3) {
 
